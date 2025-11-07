@@ -1,0 +1,10 @@
+.step-count-cnt{
+  height: 580px;
+  border-radius: 8px;
+  padding: 8px;
+  position: relative;
+  background-image: url('../images/bg-sidebar-desktop.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}

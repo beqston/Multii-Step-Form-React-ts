@@ -1,0 +1,24 @@
+.step-count-wrap{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+  position: relative;
+}
+.step-count-wrap h4{
+  border: 1px solid var(--blue50);
+  padding: 8px 12px;
+  border-radius: 50%;
+}
+.step-count-wrap div{
+  padding-left: 10px;
+}
+.step-count-wrap p{
+  color: var( --blue200);
+}
+.step-count-wrap h3{
+  font-weight: 700;
+  font-size: 15px;
+  padding-top: 4px;
+  color: var( --blue100);
+}

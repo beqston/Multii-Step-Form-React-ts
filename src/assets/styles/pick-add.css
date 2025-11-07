@@ -1,0 +1,20 @@
+.pick-hero-cnt{
+    margin-top: 2rem;
+}
+.pick-hero{
+    display: flex;
+    column-gap: 1.2rem;
+    border: 1px solid var(--blue300);
+    border-radius: 12px;
+    padding: 1rem 1.3rem;
+    cursor: pointer;
+    background-color: var(--blue100);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pick-cnt{
+    display: flex;
+    column-gap: 1.4rem;
+}

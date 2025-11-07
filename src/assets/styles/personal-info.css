@@ -1,0 +1,41 @@
+.personal-info{
+    padding: 30px 48px;
+}
+
+.personal-info form{
+    margin-top: 10px;
+    color: var( --blue950);
+    padding-bottom: 8rem;
+}
+.personal-info form  .input-cnt{
+    margin-top: 12px;
+    position: relative;
+}
+.personal-info form .last-input-cnt{
+    padding-bottom: 7rem;
+}
+.personal-info form label {
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 4px;
+}
+
+.personal-info form input {
+    color: var(--blue950);
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: var(--purple200);
+    outline-color: var(--purple200);
+}
+.personal-info form input:focus{
+    outline-color:var(--blue950) ;
+    border-color: var(--purple600);
+}
+.error{
+    color: red;
+    position: absolute;
+    right: 10px;
+    padding-bottom: 4px;
+}

@@ -1,0 +1,63 @@
+.select-plan{
+    width: 100%;
+    height: 100%;
+    padding: 30px 48px;
+}
+
+.select-hero-cnt{
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
+.select-hero-wrap{
+    padding: 1.2rem;
+    border: 1px solid var(--blue200);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.select-hero-wrap h3{
+    margin-top: 32px;
+}
+
+.monthly-early{
+    background-color: var(--blue100);
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    padding: 8px 0;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+}
+
+.choice-round-cnt{
+    background-color: black;
+    width: 4rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px 0;
+}
+.choice-round{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+.choice-right{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transform: translateX(159%);
+}
+
+.monthly-span{
+    padding-top: 12px;
+    font-size: 14px;
+    color: var(--blue950);
+}
