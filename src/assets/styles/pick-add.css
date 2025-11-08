@@ -8,7 +8,6 @@
     border-radius: 12px;
     padding: 1rem 1.3rem;
     cursor: pointer;
-    background-color: var(--blue100);
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
@@ -17,4 +16,7 @@
 .pick-cnt{
     display: flex;
     column-gap: 1.4rem;
+}
+.pick-hero .schedule{
+  color: #9e3eff;
 }

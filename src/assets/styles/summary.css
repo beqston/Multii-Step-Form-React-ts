@@ -1,0 +1,36 @@
+.select-plan-content{
+    margin-top: 3rem;
+    background-color: var(--blue100);
+    padding: 20px;
+}
+
+.select-plan-content div{
+    display: flex;
+    justify-content: space-between;
+}
+.select-plan-content div h3, .select-plan-content div .monthly-yearly{
+    color: var(--blue950);
+}
+
+.select-plan-content div div{
+    display: block;
+}
+
+
+.select-plan-content div div button{
+    all: unset;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 8px;
+}
+.select-plan-content div div button:hover{
+    color: rgb(147, 71, 218);
+}
+.select-plan-content .line{
+    background-color: var(--blue950);
+    width: 93%;
+    height: 1px;
+    margin: auto;
+    margin-top: 2rem;
+    opacity: 0.3;
+}

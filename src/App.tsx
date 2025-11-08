@@ -10,7 +10,7 @@ function App() {
   const [step, setStep] = useState<number>(1);
   const[monthly, setMonthly] = useState<boolean>(true);
   const[selectPlan, setSelectPlan] = useState<string>('');
-  console.log(selectPlan)
+  const[selectPick, setSelectPick] = useState<string>('');
 
   function handleTogleMothlyEarly(){
     setMonthly(!monthly)
@@ -28,10 +28,10 @@ function App() {
               <SelectPlan selectPlan={selectPlan} setSelectPlan={setSelectPlan} selectSchedule={handleTogleMothlyEarly} monthly={monthly} step={step} setStep={setStep} />
           </Activity>
           <Activity mode={step==3? 'visible':'hidden'}>
-              <PickAdd selectSchedule={handleTogleMothlyEarly} monthly={monthly} step={step} setStep={setStep} />
+              <PickAdd selectPick={selectPick} setSelectPick={setSelectPick} monthly={monthly} step={step} setStep={setStep} />
           </Activity>
           <Activity mode={step==4? 'visible':'hidden'}>
-              <Summary monthly={monthly} step={step} setStep={setStep} />
+              <Summary selectSchedule={handleTogleMothlyEarly} selectPlan={selectPlan} monthly={monthly} step={step} setStep={setStep} />
           </Activity>  
         </div>
       </div>
