@@ -34,3 +34,20 @@
     margin-top: 2rem;
     opacity: 0.3;
 }
+
+.pick-content-cnt{
+    display: flex;
+    flex-direction: column;
+}
+
+.pick-content-cnt .content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.total-cnt{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}

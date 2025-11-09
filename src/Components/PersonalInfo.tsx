@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import '../assets/styles/personal-info.css';
-import type { ComponentsProps } from '../types/props';
+import type { personalInfoProps } from '../types/props';
 import PreviusNext from './PreviusNext';
 import FormTitle from './FormTitle.tsx';
 
 
-export default function PersonalInfo({step, setStep}:ComponentsProps){
+export default function PersonalInfo({step, setStep}:personalInfoProps){
     const [form, setForm] = useState({
         name:'',
         email:'',

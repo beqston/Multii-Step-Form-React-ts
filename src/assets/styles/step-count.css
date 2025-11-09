@@ -22,3 +22,9 @@
   padding-top: 4px;
   color: var( --blue100);
 }
+
+@media screen and (max-width: 1024px){
+  .step-count-cnt{
+    
+  }
+}

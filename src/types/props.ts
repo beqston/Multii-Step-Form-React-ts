@@ -1,3 +1,8 @@
+export interface personalInfoProps{
+    step:number, 
+    setStep:React.Dispatch<React.SetStateAction<number>>,
+}
+
 export interface SelectPlanProps{
     step:number, 
     setStep:React.Dispatch<React.SetStateAction<number>>,
@@ -6,21 +11,22 @@ export interface SelectPlanProps{
     selectPlan:string,
     setSelectPlan:React.Dispatch<React.SetStateAction<string>>,
 }
+
 export interface PickAddsProps{
     step:number, 
     setStep:React.Dispatch<React.SetStateAction<number>>,
     monthly:boolean,
-    selectPick:string,
-    setSelectPick:React.Dispatch<React.SetStateAction<string>>,
+    selectPick:string[],
+    setSelectPick:React.Dispatch<React.SetStateAction<string[]>>,
 }
 
 export interface SummaryProps{
     step:number, 
     setStep:React.Dispatch<React.SetStateAction<number>>,
     monthly:boolean,
-    selectSchedule?:()=>void;
+    selectSchedule:()=>void;
     selectPlan:string,
-    setSelectPlan?:React.Dispatch<React.SetStateAction<string>>,
+    selectPick:string[],
 }
 
 export interface PreviusNextProps{
@@ -42,7 +48,5 @@ export interface PickHeroProps{
     title:string,
     description:string,
     schedule:string,
-    monthly:boolean,
-    selectPick:string,
-    setSelectPick:React.Dispatch<React.SetStateAction<string>>,
+    setSelectPick:React.Dispatch<React.SetStateAction<string[]>>,
 }

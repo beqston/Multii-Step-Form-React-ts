@@ -1,5 +1,6 @@
 import "../assets/styles/step.css"
 import StepCount from "./StepCount"
+import StepCountMB from "./StepCountMB"
 
 
 export default function Step({step}:{step:number}){
@@ -32,12 +33,24 @@ export default function Step({step}:{step:number}){
             {
                 stepNumbers.map((stepObj, index)=>{
                     return (
-                        <div key={stepObj.count}>
+                        <div className="step-desctop" key={stepObj.count}>
                             <StepCount index={index} step={step} count={stepObj.count} description={stepObj.description} />
                         </div>
                     )
                 })
             }
+
+            {
+                stepNumbers.map((stepObj, index)=>{
+                    return (
+                        <div className="step-mb" key={stepObj.count}>
+                            <StepCountMB index={index} step={step} count={stepObj.count} />
+                        </div>
+                    )
+                })
+            }
+
+     
         </section>
     )
 }

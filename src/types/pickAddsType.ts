@@ -1,6 +1,6 @@
-export interface pickAddsKayValuesType{
-    monthly:number, 
-    yearly:number
+interface pickAddsKayValuesType{
+    monthly?:number, 
+    yearly?:number
 }
 export default interface PickAddsType {
     'Online service':pickAddsKayValuesType,
