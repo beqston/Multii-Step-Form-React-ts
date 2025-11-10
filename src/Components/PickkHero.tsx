@@ -4,6 +4,7 @@ import type { PickHeroProps } from "../types/props";
 export default function PickHero({ title, description, schedule, setSelectPick }: PickHeroProps) {
   const [isCheckPick, setIsCheckPick] = useState(false);
 
+  // check pick functiom
   function handleTogglePick() {
     setIsCheckPick(prev => !prev);
   }

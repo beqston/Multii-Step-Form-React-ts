@@ -17,8 +17,9 @@ export default function SelectPlan({step, setStep, selectSchedule, monthly, sele
 
     return(
         <section className="select-plan">
+            {/* title and description component */}
             <FormTitle title='Select your plan' description='You have the option of monthly or yearly billing' />
-
+                {/* main content */}
                 <div className='select-hero-cnt'>
                     <SelectHero selectPlan={selectPlan} setSelectPlan={setSelectPlan} monthly={monthly} title='Arcade' cost={`${monthly?'$9/mo':'$90/yr'}`} image={arcadeImage} />
                     <SelectHero selectPlan={selectPlan} setSelectPlan={setSelectPlan} monthly={monthly} title='Advanced' cost={`${monthly?'$12/mo':'$120/yr'}`} image={advancedImage} />
@@ -31,6 +32,7 @@ export default function SelectPlan({step, setStep, selectSchedule, monthly, sele
                     </div>
                     <h4 style={{color:choiceRound?'grey':'black'}}>Early</h4>
                 </div>
+                {/* prev and next button component */}
                 <PreviusNext step={step} setStep={setStep} handleCheckForm={handleCheckForm}/>
         </section>
     )

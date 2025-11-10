@@ -1,5 +1,6 @@
 import doneImage from '../assets/images/icon-thank-you.svg'
 import '../assets/styles/thanck-yoy.css'
+
 export default function ThanckYou(){
     return(
         <div className="finish-service-cnt">

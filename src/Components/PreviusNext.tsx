@@ -1,6 +1,7 @@
 import type { PreviusNextProps } from "../types/props";
 
 export default function PreviusNext({step, setStep, handleCheckForm}:PreviusNextProps){
+    // handle prev function
     function handlePrev(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
         e.preventDefault();
         if(step>1){

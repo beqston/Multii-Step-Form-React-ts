@@ -9,7 +9,7 @@ export default function Step({step}:{step:number}){
         description: string
     };
 
-
+    // array for render step
     const stepNumbers:stepNumber[] = [
         {
             count:1,
@@ -27,9 +27,11 @@ export default function Step({step}:{step:number}){
             count:4,
             description:'SUMMARY'
         },
-    ]
+    ];
+
     return (
         <section className="step-count-cnt">
+            {/* for desctop desing */}
             {
                 stepNumbers.map((stepObj, index)=>{
                     return (
@@ -40,6 +42,8 @@ export default function Step({step}:{step:number}){
                 })
             }
 
+            {/* for mobile desing */}
+
             {
                 stepNumbers.map((stepObj, index)=>{
                     return (
@@ -49,7 +53,6 @@ export default function Step({step}:{step:number}){
                     )
                 })
             }
-
      
         </section>
     )

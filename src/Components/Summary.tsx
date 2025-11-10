@@ -9,6 +9,8 @@ import type PickAddsType from '../types/pickAddsType.ts';
 export default function Summary({step, setStep, selectPlan, monthly, selectSchedule, selectPick}:SummaryProps){
     const [finishPlanCost, setFinishPlanCost] = useState<number>(0);
     const [sumTotal, setSumTotal] = useState(0);
+
+    //pick object for calculate
     const pickAdsObj: PickAddsType = {
         'Online service': { monthly: 9, yearly: 90 },
         'Larger storage': { monthly: 12, yearly: 120 },
@@ -28,7 +30,7 @@ export default function Summary({step, setStep, selectPlan, monthly, selectSched
         Pro: { monthly: 15, yearly: 150 },
     };
 
-    // ✅ calculate base plan cost
+    // calculate base plan cost
     if (selectPlan && selectPlan in selectPlanObj) {
         const planKey = selectPlan as keyof SelectPlanObjType;
         cost = monthly
@@ -38,13 +40,13 @@ export default function Summary({step, setStep, selectPlan, monthly, selectSched
 
     setFinishPlanCost(cost);
 
-    // ✅ calculate add-ons cost
+    // calculate add-ons cost
     const numArray: number[] = selectPick.map(item => {
         const picked = pickAdsObj[item as keyof PickAddsType];
         return monthly ? picked.monthly as number : picked.yearly as number;
     });
 
-    // ✅ sum total
+    // sum total
     const total = numArray.reduce((acc, cur) => acc + cur, cost);
     setSumTotal(total);
     }
@@ -56,7 +58,9 @@ export default function Summary({step, setStep, selectPlan, monthly, selectSched
 
     return(
         <section className="select-plan">
+            {/* title and description component */}
             <FormTitle title='Finishing up' description='Double-check everything looks OK before confirming' />
+            {/* main content summary */}
                 <section>
                     <div className='select-plan-content'>
                         <div>
@@ -87,6 +91,7 @@ export default function Summary({step, setStep, selectPlan, monthly, selectSched
                         <p>${sumTotal}/{monthly?'mo':'yr'}</p>
                     </div>
                 </section>
+                {/* prev and next button component */}
                 <PreviusNext step={step} setStep={setStep} handleCheckForm={handleCheckForm}/>
         </section>
     )

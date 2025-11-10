@@ -65,8 +65,9 @@ export default function PersonalInfo({step, setStep}:personalInfoProps){
 
     return(
         <section className="personal-info">
+            {/* title and description component */}
             <FormTitle title='Personal Info' description='Please provide name, email and phone number' />
-
+            {/* main content personal info */}
             <form>
                 <div className="input-cnt">
                     {errMessage.nameErr && <span className='error'>{errMessage.nameErr}</span>}
@@ -85,7 +86,7 @@ export default function PersonalInfo({step, setStep}:personalInfoProps){
                     <label htmlFor="phone-number">Phone Number</label>
                     <input onChange={handleChangeinfo} value={form.phoneNumber}  type="tel" name="phoneNumber" id="phone-number" placeholder="e.g. +1 234 567 890"/>
                 </div>
-
+                {/* prev and next button component */}
                 <PreviusNext step={step} setStep={setStep} handleCheckForm={handleCheckForm} />
             </form>
         </section>

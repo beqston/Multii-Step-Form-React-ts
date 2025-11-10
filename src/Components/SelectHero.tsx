@@ -2,6 +2,7 @@ import type { SelectHeroProps } from "../types/props";
 
 export default function SelectHero({image, title, cost, monthly,selectPlan, setSelectPlan}:SelectHeroProps){
     const isSelected = selectPlan === title;
+    // handle select plan function
     function handleSelectPlan() {
         if(setSelectPlan){
             setSelectPlan(prev => (prev === title ? '' : title));
