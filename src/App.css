@@ -1,7 +1,6 @@
 .form-main-container{
   width: 100%;
   display: grid;
-  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   place-items: center;
   min-height: 100vh;
@@ -9,19 +8,19 @@
 }
 .form-main-container .form-cnt{
   width: 80%;
-  height: fit-content;
+  height:90% ;
   background-color: var(--blue100);
   display: grid;
   place-items: center;
 }
 
-.step-cnt{
+.step-content-cnt{
   background-color: var(--white);
   width: 80%;
   display: grid;
-  grid-template-columns: 4fr 7fr;
+  grid-template-columns: 3fr 7fr;
   padding: 20px;
-  height: 90%;
+  min-height: 90%;
   padding-bottom: 0px;
 }
 
@@ -51,6 +50,10 @@ button{
   height: 40px;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 90%;
+  bottom: 7%;
+  right: 20px;
 }
 
 .prev-next-cnt .next{
@@ -58,20 +61,41 @@ button{
   color:var(--white) ;
   padding: 8px;
   border-radius: 12px;
+  margin-right: 7%;
 }
 
 .hidden{
-visibility: hidden;
+  visibility: hidden;
 }
 
 @media screen and (max-width: 1024px){
-  .step-cnt{
+  .form-main-container .form-cnt{
+  width: 100%;
+  height:100svh;
+  position: relative;
+  top: 0;
+}
+.prev-next-cnt{
+  display: flex;
+  position: absolute;
+  width: 90%;
+  bottom: -7rem;
+  right: 20px;
+}
+
+.form-content-cnt{
+  padding: 20px;
+  position: relative;
+  top: -120px;
+  background-color: var(--blue100);
+  padding-bottom: 0;
+}
+  .step-content-cnt{
     width: 100%;
+    height: 80%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
     padding: 0px;
+  }
 
-  }
-  .form-main-container .form-cnt{
-  }
 }

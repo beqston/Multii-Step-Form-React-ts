@@ -12,3 +12,17 @@
 .finish-service-cnt p{
     text-align: center;
 }
+
+@media screen and (max-width: 1024px){
+    .finish-service-cnt{
+        width: 90%;
+        height: 480px;
+        z-index: 20;
+        background-color: var(--white);
+        margin: auto;
+        position: static;
+        z-index: 200;
+        transform: translateY(-3rem);
+        border-radius: 12px;
+    }
+}

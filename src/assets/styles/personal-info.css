@@ -1,5 +1,8 @@
 .personal-info{
     padding: 30px 48px;
+    min-height: 80%;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .personal-info form{
@@ -9,7 +12,6 @@
 }
 .personal-info form  .input-cnt{
     margin-top: 12px;
-    position: relative;
 }
 .personal-info form .last-input-cnt{
     padding-bottom: 7rem;
@@ -33,13 +35,25 @@
     outline-color:var(--blue950) ;
     border-color: var(--purple600);
 }
+
 .error{
     color: red;
     position: absolute;
-    right: 10px;
+    right: 8%;
     padding-bottom: 4px;
 }
 
 @media screen and (max-width: 1024px){
-    
+    .personal-info{
+        width: 90%;
+        height: 480px;
+        z-index: 20;
+        display: block;
+        background-color: var(--white);
+        margin: auto;
+        position: static;
+        z-index: 200;
+        transform: translateY(-3rem);
+        border-radius: 12px;
+    }
 }

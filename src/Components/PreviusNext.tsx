@@ -10,7 +10,8 @@ export default function PreviusNext({step, setStep, handleCheckForm}:PreviusNext
     return(
         <div className="prev-next-cnt">
             <button onClick={handlePrev} className={`${step==1?'hidden':'back'}`}>Go Back</button>
-            <button onClick={handleCheckForm} className='next'>Next Step</button>
+            {step < 4 && <button onClick={handleCheckForm} className='next'>Next Step</button>}
+            {step > 3 &&<button onClick={handleCheckForm} className='next'>Confirm</button>}
         </div>
     )
 }
