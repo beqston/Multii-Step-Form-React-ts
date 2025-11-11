@@ -13,9 +13,10 @@ function App() {
   const[selectPlan, setSelectPlan] = useState<string>('');
   const[selectPick, setSelectPick] = useState<string[]>([]);
 
+  
   function handleTogleMothlyEarly(){
     setMonthly(!monthly)
-  }
+  };
 
   return (
     <div className='form-main-container'>
