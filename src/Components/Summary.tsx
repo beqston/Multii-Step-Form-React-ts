@@ -2,59 +2,16 @@ import '../assets/styles/summary.css';
 import type { SummaryProps } from '../types/props';
 import PreviusNext from './PreviusNext';
 import FormTitle from './FormTitle.tsx';
-import type SelectPlanObjType from '../types/selectPlan.ts';
-import { useEffect, useState } from 'react';
-import type PickAddsType from '../types/pickAddsType.ts';
+import { useState } from 'react';
+import TotalCount from './TotalCount.tsx';
+import SummaryHero from './SummaryHero.tsx';
 
 export default function Summary({step, setStep, selectPlan, monthly, selectSchedule, selectPick}:SummaryProps){
-    const [finishPlanCost, setFinishPlanCost] = useState<number>(0);
     const [sumTotal, setSumTotal] = useState(0);
-
-    //pick object for calculate
-    const pickAdsObj: PickAddsType = {
-        'Online service': { monthly: 9, yearly: 90 },
-        'Larger storage': { monthly: 12, yearly: 120 },
-        'Customizable profile': { monthly: 15, yearly: 150 },
-    };
  
     function handleCheckForm(){
         setStep(step+1)
     };
-
-    function handleSelectPlanCost() {
-    let cost = 0;
-
-    const selectPlanObj: SelectPlanObjType = {
-        Arcade: { monthly: 9, yearly: 90 },
-        Advanced: { monthly: 12, yearly: 120 },
-        Pro: { monthly: 15, yearly: 150 },
-    };
-
-    // calculate base plan cost
-    if (selectPlan && selectPlan in selectPlanObj) {
-        const planKey = selectPlan as keyof SelectPlanObjType;
-        cost = monthly
-        ? selectPlanObj[planKey].monthly
-        : selectPlanObj[planKey].yearly;
-    }
-
-    setFinishPlanCost(cost);
-
-    // calculate add-ons cost
-    const numArray: number[] = selectPick.map(item => {
-        const picked = pickAdsObj[item as keyof PickAddsType];
-        return monthly ? picked.monthly as number : picked.yearly as number;
-    });
-
-    // sum total
-    const total = numArray.reduce((acc, cur) => acc + cur, cost);
-    setSumTotal(total);
-    }
-
-    useEffect(() => {
-    handleSelectPlanCost();
-    }, [monthly, selectPlan, selectPick]);
-
 
     return(
         <section className="select-plan">
@@ -62,34 +19,8 @@ export default function Summary({step, setStep, selectPlan, monthly, selectSched
             <FormTitle title='Finishing up' description='Double-check everything looks OK before confirming' />
             {/* main content summary */}
                 <section>
-                    <div className='select-plan-content'>
-                        <div>
-                            <div>
-                                <h3>{selectPlan}{monthly?'(Monthly)':'(yearly)'}</h3>
-                                <button onClick={selectSchedule}>Change</button>
-                            </div>
-                            <p className='monthly-yearly'>${finishPlanCost}/{monthly?'mo':'yr'}</p>
-                        </div>
-                        <div className='line'></div>
-                        <div className='pick-content-cnt'>
-                            {selectPick.map(item => {
-                                return (
-                                    <div className="content" key={item}>
-                                    <p>{item}</p>
-                                    <p>
-                                        +${monthly ? pickAdsObj[item as keyof PickAddsType].monthly : pickAdsObj[item as keyof PickAddsType].yearly}/{monthly ? 'mo' : 'yr'}
-
-                                    </p>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    <div className='total-cnt'>
-                        <p>Total (per {monthly?'month':'year'})</p>
-                        <p>${sumTotal}/{monthly?'mo':'yr'}</p>
-                    </div>
+                    <SummaryHero monthly={monthly} setSumTotal={setSumTotal} selectPick={selectPick} selectPlan={selectPlan} selectSchedule={selectSchedule} />
+                    <TotalCount monthly={monthly} sumTotal={sumTotal} />
                 </section>
                 {/* prev and next button component */}
                 <PreviusNext step={step} setStep={setStep} handleCheckForm={handleCheckForm}/>

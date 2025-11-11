@@ -1,27 +1,22 @@
 import { useState } from 'react';
 import '../assets/styles/personal-info.css';
-import type { personalInfoProps } from '../types/props';
+import type { ErrMessageType, FormType, personalInfoProps } from '../types/props';
 import PreviusNext from './PreviusNext';
 import FormTitle from './FormTitle.tsx';
+import PersonalFormInputWrapp from './PersonalFormInputWrapp.tsx';
 
 
 export default function PersonalInfo({step, setStep}:personalInfoProps){
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<FormType>({
         name:'',
         email:'',
         phoneNumber:''
     });
-    const [errMessage, setErrMessage]= useState({
+    const [errMessage, setErrMessage]= useState<ErrMessageType>({
         nameErr:'',
         emailErr:'',
         phoneNumberErr:''
     });
-    function handleChangeinfo(e:React.ChangeEvent<HTMLInputElement>){
-        setForm({
-            ...form,
-            [e.target.name]:e.target.value
-        })
-    };
 
     function handleCheckForm(e:React.MouseEvent<HTMLButtonElement, MouseEvent>){
         e.preventDefault();
@@ -69,23 +64,9 @@ export default function PersonalInfo({step, setStep}:personalInfoProps){
             <FormTitle title='Personal Info' description='Please provide name, email and phone number' />
             {/* main content personal info */}
             <form>
-                <div className="input-cnt">
-                    {errMessage.nameErr && <span className='error'>{errMessage.nameErr}</span>}
-                    <label htmlFor="name">Name</label>
-                    <input onChange={handleChangeinfo} value={form.name} type="text" name="name" id="name" placeholder="e.g. Stephen King"/>
-                </div>
-
-                <div className="input-cnt">
-                    {errMessage.emailErr && <span className='error'>{errMessage.emailErr}</span>}
-                    <label htmlFor="email">Email Address</label>
-                    <input onChange={handleChangeinfo} value={form.email}  type="text" name="email" id="email" placeholder="e.g. stephenking@lorem.com"/>
-                </div>
-
-                <div className="input-cnt last-input-cnt">
-                    {errMessage.phoneNumberErr && <span className='error'>{errMessage.phoneNumberErr}</span>}
-                    <label htmlFor="phone-number">Phone Number</label>
-                    <input onChange={handleChangeinfo} value={form.phoneNumber}  type="tel" name="phoneNumber" id="phone-number" placeholder="e.g. +1 234 567 890"/>
-                </div>
+                <PersonalFormInputWrapp form={form} errMessage={errMessage} setErrMessage={setErrMessage} setForm={setForm} wrapClass='input-cnt' placeholder='e.g. Stephen King' type='text' name='name' id='name' labelText='Name' />
+                <PersonalFormInputWrapp form={form} errMessage={errMessage} setErrMessage={setErrMessage} setForm={setForm} wrapClass='input-cnt' placeholder='e.g. stephenking@lorem.com' type='email' name='email' id='email' labelText='Email Address' />
+                <PersonalFormInputWrapp form={form} errMessage={errMessage} setErrMessage={setErrMessage} setForm={setForm} wrapClass='input-cnt last-input-cnt' placeholder='e.g. +1 234 567 890' type='tel' name='phoneNumber' id='phone-number' labelText='Phone Number' />
                 {/* prev and next button component */}
                 <PreviusNext step={step} setStep={setStep} handleCheckForm={handleCheckForm} />
             </form>

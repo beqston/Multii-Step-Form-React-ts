@@ -1,6 +1,7 @@
 import '../assets/styles/step-count.css';
+import type StepCountType from '../types/stepCount';
 
-export default function StepCountMB({count, step, index}:{index:number,count:number, step:number}){
+export default function StepCountMB({count, step, index}:StepCountType){
     return (
         <div className="step-count-wrap">
             <h4 style={{
